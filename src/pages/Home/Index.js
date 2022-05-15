@@ -1,27 +1,30 @@
-import React from 'react';
-import MainNav from '../../components/navbar/MainNav';
-import Footer from '../../components/footer/Footer';
-import classes from './index.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Container from "@mui/material/Container";
+import MainNav from "../../components/navbar/MainNav";
+import Footer from "../../components/footer/Footer";
+import { ParaStyled, OuterWrapper } from "./homeStyled";
 
 const Index = () => {
   return (
-      <>
-      
-        <MainNav/>
-        <div className={classes["main-container"]}>
-        <h5>Welcome , John Doe !</h5>
-        <p className={classes['main-para']}>
+    <OuterWrapper>
+      <MainNav />
+      <Container maxWidth="lg" className="wrapper">
+        <ParaStyled>
+          <span className="user-greet-heading">Welcome , John Doe !</span>
+          <br />
           You can confirm your account detail through the link below:{" "}
-          <a href="#">CONFIRM YOUR ACCOUNT</a>
-          <span className={classes.highlight}>
+          <Link to="/password">CONFIRM YOUR ACCOUNT</Link>
+          <br />
+          <span className="highlight">
             {" "}
-            Regards, The  <br/> NIMCET 2020 Team
+            Regards, <br /> The NIMCET 2020 Team
           </span>
-        </p>
-      </div>
-      <Footer/>
-      </>
-  )
-}
+        </ParaStyled>
+      </Container>
+      <Footer />
+    </OuterWrapper>
+  );
+};
 
-export default Index
+export default Index;

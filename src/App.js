@@ -1,10 +1,22 @@
 import "./App.css";
-import Index from "./pages/Home/Index";
+import { Routes, Route } from "react-router-dom";
+import { RoutesPath } from "./Routes";
 
 function App() {
   return (
     <div className="App">
-      <Index />
+      <Routes>
+        {RoutesPath.map((route) => {
+          return (
+            <Route
+              key={route.id}
+              exact={route.exact}
+              path={route.path}
+              element={route.element}
+            />
+          );
+        })}
+      </Routes>
     </div>
   );
 }

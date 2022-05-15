@@ -1,14 +1,20 @@
 import React from "react";
-import classes from "./mainnav.module.css";
+import Container from '@mui/material/Container';
+import { NavStyled } from "./mainNavStyled";
+import PageContainer from "../UI/container/PageContainer";
 
 const MainNav = () => {
   return (
     <>
-      <nav className={classes["main-nav"]}>
-        <img src="" alt="logo of nmhct" />
-        <h2 className={classes["main-heading"]}>NIMCET - 2020</h2>
-        <p className={classes["lead-para"]}>NIT MCA COMMON ENTRANCE TEST</p>
-      </nav>
+      <PageContainer>
+        <NavStyled>
+          <img src="" alt="logo of nmhct" />
+          {/* <Container maxWidth="lg">
+          </Container> */}
+          <h2>NIMCET - 2022</h2>
+          <p>NIT MCA COMMON ENTRANCE TEST</p>
+        </NavStyled>
+      </PageContainer>
     </>
   );
 };
